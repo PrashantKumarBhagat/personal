@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prashant Kumar — Enterprise Solutions Leader in Banking & Financial Services.">
+<title>Prashant Kumar — Enterprise Solutions Leader</title>
+<style>
+  :root{
+    --bg:#f5f5f7;
+    --surface:rgba(255,255,255,.78);
+    --card:#fff;
+    --text:#1d1d1f;
+    --muted:#6e6e73;
+    --line:rgba(0,0,0,.08);
+    --accent:#0071e3;
+    --dark:#101010;
+    --max:1180px;
+    --radius:28px;
+    --shadow:0 18px 55px rgba(0,0,0,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Arial,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:20;
+    height:64px;
+    background:rgba(245,245,247,.78);
+    backdrop-filter:saturate(180%) blur(22px);
+    -webkit-backdrop-filter:saturate(180%) blur(22px);
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+  .nav-inner{
+    max-width:var(--max);height:100%;margin:auto;padding:0 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{font-weight:650;letter-spacing:-.02em}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:#4b4b50}
+  .nav-links a:hover{color:#000}
+  .menu{display:none;background:none;border:0;font-size:24px}
+  main{padding-top:64px}
+  .hero{
+    min-height:calc(100vh - 64px);
+    display:flex;align-items:center;
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(circle at 80% 35%,rgba(0,113,227,.13),transparent 31%),
+      radial-gradient(circle at 15% 70%,rgba(120,80,255,.09),transparent 28%);
+  }
+  .hero-inner{max-width:var(--max);width:100%;margin:auto;padding:90px 24px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:14px;font-weight:650;color:var(--accent);
+    margin-bottom:22px;
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  h1{
+    font-size:clamp(54px,8vw,100px);
+    line-height:.98;letter-spacing:-.065em;
+    max-width:980px;margin:0 0 32px;font-weight:700;
+  }
+  .hero p{
+    max-width:760px;font-size:clamp(21px,2.3vw,30px);
+    line-height:1.25;letter-spacing:-.025em;color:#424245;margin:0 0 38px;
+  }
+  .actions{display:flex;gap:14px;flex-wrap:wrap}
+  .button{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:46px;padding:0 21px;border-radius:999px;
+    background:var(--text);color:#fff;font-size:15px;font-weight:600;
+    transition:.2s transform,.2s background;
+  }
+  .button:hover{transform:translateY(-2px);background:#000}
+  .button.secondary{background:#e8e8ed;color:#1d1d1f}
+  .button.secondary:hover{background:#dddde2}
+  section{padding:110px 24px}
+  .container{max-width:var(--max);margin:auto}
+  .section-label{font-size:14px;color:var(--muted);font-weight:650;text-transform:uppercase;letter-spacing:.09em;margin-bottom:16px}
+  h2{font-size:clamp(38px,5vw,64px);letter-spacing:-.05em;line-height:1.05;margin:0 0 24px}
+  .intro{font-size:22px;max-width:820px;color:#4a4a4f;letter-spacing:-.015em}
+  .about{background:#fff}
+  .pill-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:55px;
+  }
+  .pill{
+    padding:30px;border:1px solid var(--line);border-radius:24px;background:#fafafa;
+  }
+  .pill strong{display:block;font-size:20px;letter-spacing:-.02em;margin-bottom:8px}
+  .pill span{color:var(--muted);font-size:15px}
+  .experience{background:var(--bg)}
+  .timeline{margin-top:55px;border-top:1px solid var(--line)}
+  .role{
+    display:grid;grid-template-columns:230px 1fr;gap:55px;
+    padding:34px 0;border-bottom:1px solid var(--line);
+  }
+  .role-date{color:var(--muted);font-size:14px;padding-top:5px}
+  .role h3{font-size:28px;letter-spacing:-.035em;margin:0 0 4px}
+  .company{font-size:17px;color:var(--accent);font-weight:600;margin-bottom:12px}
+  .role p{margin:0;color:#55555a;max-width:720px}
+  .focus{background:var(--dark);color:#fff}
+  .focus .section-label{color:#a8a8ad}
+  .focus .intro{color:#c9c9ce}
+  .focus-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:55px;
+  }
+  .focus-card{
+    min-height:210px;padding:30px;border-radius:25px;
+    background:#1c1c1e;border:1px solid #303034;
+  }
+  .number{font-size:14px;color:#8e8e93;margin-bottom:45px}
+  .focus-card h3{font-size:24px;letter-spacing:-.03em;margin:0 0 8px}
+  .focus-card p{color:#a9a9ae;margin:0;font-size:15px}
+  .education{background:#fff}
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:55px}
+  .edu{
+    padding:34px;border:1px solid var(--line);border-radius:25px;background:#fafafa;
+  }
+  .edu h3{font-size:22px;margin:0 0 7px;letter-spacing:-.025em}
+  .edu p{margin:0;color:var(--muted)}
+  .contact{
+    text-align:center;
+    background:
+      radial-gradient(circle at 50% 0%,rgba(0,113,227,.12),transparent 35%),
+      var(--bg);
+  }
+  .contact h2{max-width:800px;margin:0 auto 22px}
+  .contact .intro{margin:0 auto 35px}
+  .contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+  footer{padding:28px 24px;color:var(--muted);font-size:13px;background:#fff}
+  footer .container{display:flex;justify-content:space-between;gap:20px}
+  @media(max-width:800px){
+    .nav-links{display:none}.menu{display:block}
+    .hero-inner{padding:70px 24px}
+    section{padding:78px 24px}
+    .pill-grid,.focus-grid{grid-template-columns:1fr}
+    .role{grid-template-columns:1fr;gap:9px}
+    .edu-grid{grid-template-columns:1fr}
+    footer .container{display:block}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Prashant Kumar</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow"><span class="dot"></span> Enterprise Solutions Leader</div>
+      <h1>Turning complex banking problems into clear, valuable solutions.</h1>
+      <p>20+ years across banking, financial services and enterprise transformation — connecting strategy, technology and delivery with AI, Pega and Appian.</p>
+      <div class="actions">
+        <a class="button" href="#experience">Explore my experience</a>
+        <a class="button secondary" href="mailto:prashantbhagat@gmail.com">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label">About</div>
+      <h2>Business thinking.<br>Technology fluency.</h2>
+      <p class="intro">Prashant is a senior Banking and Financial Services professional with over 20 years of international experience leading complex enterprise technology and transformation programs across Australia, North America, Europe and India.</p>
+      <div class="pill-grid">
+        <div class="pill"><strong>Strategy → Delivery</strong><span>Shaping product vision and roadmaps, prioritising what matters most, and guiding initiatives from concept through launch and adoption.</span></div>
+        <div class="pill"><strong>Business × Technology</strong><span>Translating customer needs and strategy into practical technology solutions that create measurable value.</span></div>
+        <div class="pill"><strong>Emerging Technology</strong><span>Strong interest in AI and intelligent automation and their role in shaping the future of financial services.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-label">Experience</div>
+      <h2>A career built across<br>markets and transformation.</h2>
+      <div class="timeline">
+        <article class="role">
+          <div class="role-date">Aug 2022 — Present<br>Sydney, NSW</div>
+          <div><h3>Principal Consultant</h3><div class="company">Infosys</div><p>Enterprise consulting and transformation leadership within Banking and Financial Services.</p></div>
+        </article>
+        <article class="role">
+          <div class="role-date">Jul 2018 — Aug 2022<br>India · Australia</div>
+          <div><h3>Solutions Consultant</h3><div class="company">Accenture</div><p>Solutions consulting across business and technology transformation engagements.</p></div>
+        </article>
+        <article class="role">
+          <div class="role-date">Oct 2008 — Jul 2018<br>India · Switzerland · USA · Canada</div>
+          <div><h3>Business Consulting</h3><div class="company">Capgemini</div><p>Business consulting and enterprise transformation across multiple international markets.</p></div>
+        </article>
+        <article class="role">
+          <div class="role-date">Jan 2006 — Oct 2008<br>India · Netherlands</div>
+          <div><h3>Business Analyst</h3><div class="company">CMC LTD</div><p>Business analysis and technology delivery in international client environments.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="focus" id="expertise">
+    <div class="container">
+      <div class="section-label">Core expertise</div>
+      <h2>Where strategy meets execution.</h2>
+      <p class="intro">A cross-functional perspective shaped by two decades of enterprise technology, banking and transformation work.</p>
+      <div class="focus-grid">
+        <div class="focus-card"><div class="number">01</div><h3>Solution Architecture</h3><p>Enterprise solution architecture with strong Pega PRPC capability.</p></div>
+        <div class="focus-card"><div class="number">02</div><h3>Pre-Sales Consulting</h3><p>Shaping compelling technology solutions and translating complex needs into clear propositions.</p></div>
+        <div class="focus-card"><div class="number">03</div><h3>Product & Transformation</h3><p>Product vision, roadmaps, digital transformation and delivery excellence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="education" id="education">
+    <div class="container">
+      <div class="section-label">Education & certifications</div>
+      <h2>Continuous learning,<br>grounded in technology.</h2>
+      <div class="edu-grid">
+        <div class="edu">
+          <h3>Master of Business Administration</h3>
+          <p>ABV-Indian Institute of Information Technology and Management · 2003–2005</p>
+        </div>
+        <div class="edu">
+          <h3>Master of Computer Applications</h3>
+          <p>University of Jammu · 2000–2003</p>
+        </div>
+        <div class="edu">
+          <h3>Certified Decisioning Consultant</h3>
+          <p>Pega</p>
+        </div>
+        <div class="edu">
+          <h3>Certified System Architect (CSA)</h3>
+          <p>Pega</p>
+        </div>
+        <div class="edu">
+          <h3>Certified Pega Business Architect</h3>
+          <p>CPBA 7.3 · Pega</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-label">Contact</div>
+      <h2>Let's build the next transformation.</h2>
+      <p class="intro">Based in Harris Park, New South Wales, Australia.</p>
+      <div class="contact-links">
+        <a class="button" href="mailto:prashantbhagat@gmail.com">Email Prashant</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/prashant-kumar-562aab3" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="button secondary" href="tel:0480363146">0480 363 146</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> Prashant Kumar</span>
+    <span>Enterprise Solutions · Banking & Financial Services</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach(link => link.addEventListener("click", () => document.querySelector(".nav-links").classList.remove("mobile-open")));
+</script>
+<style>
+@media(max-width:800px){
+  .nav-links.mobile-open{
+    display:flex;position:absolute;top:64px;left:12px;right:12px;
+    flex-direction:column;gap:0;background:rgba(255,255,255,.94);
+    backdrop-filter:blur(20px);border:1px solid var(--line);
+    border-radius:18px;padding:8px;box-shadow:var(--shadow)
+  }
+  .nav-links.mobile-open a{padding:13px 12px}
+}
+</style>
+</body>
+</html>
