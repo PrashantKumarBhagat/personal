@@ -143,5 +143,1292 @@
     }
 
     .card h3 {
-      margi
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .description {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    /* INPUT */
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      resize: vertical;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 17px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--blue);
+      color: white;
+      font-weight: bold;
+    }
+
+    .secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .secondary:hover {
+      background: #f5f5f7;
+    }
+
+    /* STATS */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .stat {
+      background: #f5f5f7;
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .stat-label {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* TRACE */
+
+    .trace {
+      min-height: 220px;
+      padding: 18px;
+      border-radius: 14px;
+      background: #111;
+      color: #d8f8df;
+      font-family: monospace;
+      font-size: 12px;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    /* CHUNKS */
+
+    .chunks {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+
+    .chunk {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 15px;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .chunk.retrieved {
+      background: var(--blue-light);
+      border: 2px solid var(--blue);
+    }
+
+    .chunk-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chunk-title {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .score {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .chunk-text {
+      margin: 10px 0 0;
+      color: #4a4a4f;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* ANSWER */
+
+    .answer {
+      background: #f8fbff;
+      border: 1px solid #cfe6ff;
+      border-radius: 15px;
+      padding: 20px;
+      min-height: 220px;
+    }
+
+    .label {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .answer-text {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .sources {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    /* LEARNING CARDS */
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .learning-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: white;
+    }
+
+    .learning-card h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .learning-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 25px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .pipeline {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .learning-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: 94%;
+        padding-top: 25px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .pipeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="eyebrow">Interactive AI Learning Tool</div>
+    <h1>RAG Simulator</h1>
+    <div class="subtitle">
+      Understand Retrieval-Augmented Generation step by step.
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h2>
+      Documents → Chunks → Embeddings → Retrieval → LLM
+    </h2>
+
+    <p>
+      Ask a question and watch how a RAG system retrieves relevant
+      pieces of information before giving them to the LLM.
+    </p>
+
+    <div class="pipeline">
+
+      <div class="step" data-step="1">
+        <span class="step-number">01</span>
+        <span class="step-name">Documents</span>
+      </div>
+
+      <div class="step" data-step="2">
+        <span class="step-number">02</span>
+        <span class="step-name">Chunking</span>
+      </div>
+
+      <div class="step" data-step="3">
+        <span class="step-number">03</span>
+        <span class="step-name">Embeddings</span>
+      </div>
+
+      <div class="step" data-step="4">
+        <span class="step-number">04</span>
+        <span class="step-name">Vector DB</span>
+      </div>
+
+      <div class="step" data-step="5">
+        <span class="step-number">05</span>
+        <span class="step-name">Retrieval</span>
+      </div>
+
+      <div class="step" data-step="6">
+        <span class="step-number">06</span>
+        <span class="step-name">Top-K</span>
+      </div>
+
+      <div class="step" data-step="7">
+        <span class="step-number">07</span>
+        <span class="step-name">LLM</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUESTION + TRACE -->
+
+  <div class="grid">
+
+    <section class="card">
+
+      <h3>1. Ask a Question</h3>
+
+      <div class="description">
+        Enter a question about the documents stored in the
+        knowledge base.
+      </div>
+
+      <textarea id="question">How can a customer reset their password?</textarea>
+
+      <div class="buttons">
+
+        <button class="primary" onclick="runRAG()">
+          ▶ Run RAG
+        </button>
+
+        <button class="secondary" onclick="useExample(1)">
+          Password
+        </button>
+
+        <button class="secondary" onclick="useExample(2)">
+          Migration
+        </button>
+
+        <button class="secondary" onclick="useExample(3)">
+          Retention
+        </button>
+
+      </div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <span class="stat-number">1</span>
+          <span class="stat-label">Source document</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-number">8</span>
+          <span class="stat-label">Indexed chunks</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-number" id="tokenCount">—</span>
+          <span class="stat-label">Context tokens</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="card">
+
+      <h3>2. What Is Happening?</h3>
+
+      <div class="description">
+        Follow the RAG pipeline in real time.
+      </div>
+
+      <div class="trace" id="trace">
+Waiting for question...
+
+Click "Run RAG" to start.
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- CHUNKS + ANSWER -->
+
+  <div class="grid">
+
+    <section class="card">
+
+      <h3>3. Document Chunks</h3>
+
+      <div class="description">
+        Each chunk remains normal text. The embedding is a
+        numerical representation stored with the chunk.
+      </div>
+
+      <div class="chunks" id="chunks"></div>
+
+    </section>
+
+
+    <section class="card">
+
+      <h3>4. Context Sent to the LLM</h3>
+
+      <div class="description">
+        Only the retrieved chunks are passed to the LLM as
+        context. The whole document collection is not required.
+      </div>
+
+      <div class="answer" id="answer">
+
+        <div class="label">
+          LLM Answer
+        </div>
+
+        <p class="answer-text">
+          Run the simulator to see the retrieved context
+          and generated answer.
+        </p>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- LEARNING -->
+
+  <section class="card">
+
+    <h3>5. What You Should Remember</h3>
+
+    <div class="learning-grid">
+
+      <div class="learning-card">
+
+        <h4>Chunking</h4>
+
+        <p>
+          Large documents are broken into smaller pieces
+          so relevant information can be retrieved.
+        </p>
+
+      </div>
+
+
+      <div class="learning-card">
+
+        <h4>Embedding</h4>
+
+        <p>
+          Text is converted into numbers called vectors.
+          Similar meanings tend to have similar vectors.
+        </p>
+
+      </div>
+
+
+      <div class="learning-card">
+
+        <h4>Retrieval</h4>
+
+        <p>
+          The user's question is embedded and compared
+          against the stored chunk embeddings.
+        </p>
+
+      </div>
+
+
+      <div class="learning-card">
+
+        <h4>Generation</h4>
+
+        <p>
+          The retrieved chunks and question are provided
+          to the LLM, which generates the final response.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="footer">
+      This is an educational simulation. No external APIs are used.
+    </div>
+
+  </section>
+
+</div>
+
+
+<script>
+
+  /*
+   * =====================================================
+   * RAG SIMULATOR DATA
+   * =====================================================
+   *
+   * A real RAG system would use an embedding model
+   * and a vector database.
+   *
+   * This demo uses simple keyword scoring so that
+   * everything works directly inside GitHub Pages.
+   */
+
+
+  const documents = [
+
+    {
+      id: 1,
+      title: "Password Reset",
+      text:
+        "Customers can reset their password from the online banking login page by selecting Forgot Password. The customer then verifies their identity and creates a new password.",
+      keywords:
+        ["password", "reset", "forgot", "login", "customer", "verify"]
+    },
+
+    {
+      id: 2,
+      title: "Account Security",
+      text:
+        "A strong password should be unique and meet the bank's minimum length and complexity requirements. Customers should never share their password.",
+      keywords:
+        ["password", "security", "customer", "complexity"]
+    },
+
+    {
+      id: 3,
+      title: "Identity Verification",
+      text:
+        "For sensitive account actions, the customer may need to complete identity verification using a one-time code or additional security checks.",
+      keywords:
+        ["identity", "verify", "security", "code", "customer"]
+    },
+
+    {
+      id: 4,
+      title: "Document Migration",
+      text:
+        "During document migration, documents are moved from the legacy content management platform to the new platform. Customer and account identifiers may need to be mapped.",
+      keywords:
+        ["document", "migration", "legacy", "platform", "customer", "account", "mapping"]
+    },
+
+    {
+      id: 5,
+      title: "ECM Search",
+      text:
+        "The enterprise content management search interface allows authorised users to search for customer documents using indexed metadata and identifiers.",
+      keywords:
+        ["document", "search", "customer", "metadata", "identifier", "ecm"]
+    },
+
+    {
+      id: 6,
+      title: "Document Retention",
+      text:
+        "Customer documents are retained according to the applicable records management and retention schedule. Retention periods can vary by document type.",
+      keywords:
+        ["document", "retention", "records", "type"]
+    },
+
+    {
+      id: 7,
+      title: "Access Control",
+      text:
+        "Only authorised users should access customer documents. Role-based access controls help restrict sensitive information to permitted users.",
+      keywords:
+        ["access", "customer", "document", "security", "authorised"]
+    },
+
+    {
+      id: 8,
+      title: "Migration Validation",
+      text:
+        "After migration, reconciliation checks confirm that documents, customer identifiers, metadata and relationships have transferred correctly.",
+      keywords:
+        ["migration", "document", "customer", "identifier", "metadata", "validation"]
+    }
+
+  ];
+
+
+  /*
+   * =====================================================
+   * DISPLAY DOCUMENT CHUNKS
+   * =====================================================
+   */
+
+  function displayChunks(scores) {
+
+    const scoreMap = {};
+
+    scores.forEach(function(item) {
+      scoreMap[item.id] = item.score;
+    });
+
+
+    const container =
+      document.getElementById("chunks");
+
+
+    container.innerHTML = "";
+
+
+    documents.forEach(function(document) {
+
+      const score =
+        scoreMap[document.id] || 0;
+
+
+      const div =
+        document.createElement("div");
+
+
+      div.className = "chunk";
+
+
+      div.id =
+        "chunk-" + document.id;
+
+
+      div.innerHTML =
+
+        '<div class="chunk-header">' +
+
+          '<span class="chunk-title">' +
+            'Chunk ' +
+            document.id +
+            ' · ' +
+            document.title +
+          '</span>' +
+
+          '<span class="score">' +
+            score.toFixed(0) +
+            '%' +
+          '</span>' +
+
+        '</div>' +
+
+        '<p class="chunk-text">' +
+          document.text +
+        '</p>';
+
+
+      container.appendChild(div);
+
+    });
+
+  }
+
+
+  /*
+   * =====================================================
+   * TOKENIZE QUESTION
+   * =====================================================
+   */
+
+  function tokenize(text) {
+
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, "")
+      .split(/\s+/)
+      .filter(function(word) {
+
+        return word.length > 2;
+
+      });
+
+  }
+
+
+  /*
+   * =====================================================
+   * SIMULATED RETRIEVAL SCORE
+   * =====================================================
+   *
+   * Real RAG:
+   *
+   * Question
+   *     ↓
+   * Embedding
+   *     ↓
+   * Vector similarity
+   *     ↓
+   * Relevant chunks
+   *
+   * This demo uses keyword matching instead.
+   */
+
+  function calculateScore(question, document) {
+
+    const words =
+      tokenize(question);
+
+
+    let score = 0;
+
+
+    words.forEach(function(word) {
+
+      if (
+        document.keywords.indexOf(word) !== -1
+      ) {
+
+        score += 2;
+
+      }
+
+
+      if (
+        document.text
+          .toLowerCase()
+          .indexOf(word) !== -1
+      ) {
+
+        score += 0.5;
+
+      }
+
+    });
+
+
+    /*
+     * Simple semantic relationships
+     */
+
+    const relationships = {
+
+      reset: ["password", "forgot"],
+
+      password: ["reset", "security"],
+
+      migrate: ["migration"],
+
+      migrated: ["migration"],
+
+      retained: ["retention"],
+
+      documents: ["document"]
+
+    };
+
+
+    words.forEach(function(word) {
+
+      const related =
+        relationships[word];
+
+
+      if (!related) {
+        return;
+      }
+
+
+      related.forEach(function(term) {
+
+        if (
+          document.keywords.indexOf(term) !== -1
+        ) {
+
+          score += 1;
+
+        }
+
+      });
+
+    });
+
+
+    return Math.min(
+      99,
+      score * 10
+    );
+
+  }
+
+
+  /*
+   * =====================================================
+   * DELAY
+   * =====================================================
+   */
+
+  function wait(milliseconds) {
+
+    return new Promise(function(resolve) {
+
+      setTimeout(resolve, milliseconds);
+
+    });
+
+  }
+
+
+  /*
+   * =====================================================
+   * RUN RAG
+   * =====================================================
+   */
+
+  async function runRAG() {
+
+    const question =
+      document
+        .getElementById("question")
+        .value
+        .trim();
+
+
+    const trace =
+      document.getElementById("trace");
+
+
+    const answer =
+      document.getElementById("answer");
+
+
+    /*
+     * Reset pipeline
+     */
+
+    document
+      .querySelectorAll(".step")
+      .forEach(function(step) {
+
+        step.classList.remove("active");
+
+      });
+
+
+    document
+      .querySelectorAll(".chunk")
+      .forEach(function(chunk) {
+
+        chunk.classList.remove("retrieved");
+
+      });
+
+
+    /*
+     * STEP 1
+     */
+
+    activateStep(1);
+
+    trace.textContent =
+      "STEP 1 — DOCUMENTS\n\n" +
+      "Knowledge base contains 1 source document.\n" +
+      "The document has been divided into 8 chunks.";
+
+    await wait(700);
+
+
+    /*
+     * STEP 2
+     */
+
+    activateStep(2);
+
+    trace.textContent +=
+      "\n\nSTEP 2 — CHUNKING\n\n" +
+      "Large document → smaller retrievable chunks.";
+
+    await wait(700);
+
+
+    /*
+     * STEP 3
+     */
+
+    activateStep(3);
+
+    trace.textContent +=
+      "\n\nSTEP 3 — EMBEDDINGS\n\n" +
+      "Each chunk is converted into a numerical vector.\n" +
+      "Example: [0.21, -0.44, 0.73, ...]";
+
+    await wait(700);
+
+
+    /*
+     * STEP 4
+     */
+
+    activateStep(4);
+
+    trace.textContent +=
+      "\n\nSTEP 4 — VECTOR DATABASE\n\n" +
+      "Chunk text + embeddings are stored.\n" +
+      "The vector database makes similarity search possible.";
+
+    await wait(700);
+
+
+    /*
+     * Calculate retrieval
+     */
+
+    const scores =
+      documents
+        .map(function(document) {
+
+          return {
+
+            id: document.id,
+
+            score:
+              calculateScore(
+                question,
+                document
+              )
+
+          };
+
+        })
+        .sort(function(a,b) {
+
+          return b.score - a.score;
+
+        });
+
+
+    displayChunks(scores);
+
+
+    /*
+     * STEP 5
+     */
+
+    activateStep(5);
+
+    trace.textContent +=
+      "\n\nSTEP 5 — QUERY EMBEDDING\n\n" +
+      "User question:\n" +
+      question +
+      "\n\n" +
+      "Question → embedding vector\n" +
+      "[0.18, -0.27, 0.81, ...]\n\n" +
+      "Vector similarity search begins.";
+
+    await wait(700);
+
+
+    /*
+     * STEP 6
+     */
+
+    activateStep(6);
+
+
+    const topK =
+      scores
+        .slice(0,3)
+        .filter(function(item) {
+
+          return item.score > 0;
+
+        });
+
+
+    topK.forEach(function(item) {
+
+      const chunk =
+        document.getElementById(
+          "chunk-" + item.id
+        );
+
+
+      if (chunk) {
+        chunk.classList.add("retrieved");
+      }
+
+    });
+
+
+    trace.textContent +=
+      "\n\nSTEP 6 — TOP-K RETRIEVAL\n\n" +
+      documents.length +
+      " chunks searched.\n\n" +
+      "Top " +
+      topK.length +
+      " relevant chunks selected.";
+
+
+    await wait(700);
+
+
+    /*
+     * Build context
+     */
+
+    const selectedDocuments =
+      topK.map(function(item) {
+
+        return documents.find(
+          function(document) {
+
+            return document.id === item.id;
+
+          }
+        );
+
+      });
+
+
+    const context =
+      selectedDocuments
+        .map(function(document) {
+
+          return document.text;
+
+        })
+        .join(" ");
+
+
+    const estimatedTokens =
+      Math.round(
+        context.length / 4
+      );
+
+
+    document.getElementById(
+      "tokenCount"
+    ).textContent =
+      estimatedTokens;
+
+
+    /*
+     * STEP 7
+     */
+
+    activateStep(7);
+
+
+    trace.textContent +=
+      "\n\nSTEP 7 — LLM GENERATION\n\n" +
+      "Question + retrieved context → LLM\n\n" +
+      "Estimated context: ~" +
+      estimatedTokens +
+      " tokens\n\n" +
+      "LLM generates the final answer.";
+
+
+    await wait(700);
+
+
+    /*
+     * Generate answer
+     */
+
+    const generatedAnswer =
+      generateAnswer(
+        question,
+        selectedDocuments
+      );
+
+
+    const sourceNames =
+      selectedDocuments
+        .map(function(document) {
+
+          return "Chunk " + document.id;
+
+        })
+        .join(", ");
+
+
+    answer.innerHTML =
+
+      '<div class="label">' +
+        'Simulated LLM Answer' +
+      '</div>' +
+
+      '<p class="answer-text">' +
+        generatedAnswer +
+      '</p>' +
+
+      '<div class="sources">' +
+        'Retrieved context: ' +
+        (sourceNames || "No relevant chunks found.") +
+      '</div>';
+
+  }
+
+
+  /*
+   * =====================================================
+   * ACTIVATE PIPELINE STEP
+   * =====================================================
+   */
+
+  function activateStep(number) {
+
+    const step =
+      document.querySelector(
+        '[data-step="' + number + '"]'
+      );
+
+
+    if (step) {
+
+      step.classList.add("active");
+
+    }
+
+  }
+
+
+  /*
+   * =====================================================
+   * SIMULATED LLM ANSWER
+   * =====================================================
+   */
+
+  function generateAnswer(
+    question,
+    selectedDocuments
+  ) {
+
+    const q =
+      question.toLowerCase();
+
+
+    if (
+      q.indexOf("password") !== -1 ||
+      q.indexOf("reset") !== -1
+    ) {
+
+      return (
+        "A customer can reset their password " +
+        "from the online banking login page by " +
+        "selecting 'Forgot Password'. They then " +
+        "verify their identity and create a new password. " +
+        "Additional security checks may apply."
+      );
+
+    }
+
+
+    if (
+      q.indexOf("migration") !== -1 ||
+      q.indexOf("migrate") !== -1
+    ) {
+
+      return (
+        "During document migration, documents are " +
+        "moved from the legacy content management " +
+        "platform to the new platform. Customer and " +
+        "account identifiers may need to be mapped, " +
+        "followed by reconciliation checks."
+      );
+
+    }
+
+
+    if (
+      q.indexOf("retention") !== -1 ||
+      q.indexOf("retain") !== -1
+    ) {
+
+      return (
+        "Customer documents are retained according " +
+        "to the applicable records management and " +
+        "retention schedule. The retention period " +
+        "can vary depending on the document type."
+      );
+
+    }
+
+
+    if (
+      q.indexOf("search") !== -1
+    ) {
+
+      return (
+        "The enterprise content management search " +
+        "interface can use indexed metadata and " +
+        "identifiers to help authorised users locate " +
+        "customer documents."
+      );
+
+    }
+
+
+    if (selectedDocuments.length > 0) {
+
+      return (
+        "The retrieval system found information in " +
+        selectedDocuments
+          .map(function(document) {
+            return document.title;
+          })
+          .join(", ") +
+        ". A real LLM would use these retrieved " +
+        "chunks as context to generate the final answer."
+      );
+
+    }
+
+
+    return (
+      "No sufficiently relevant information was " +
+      "retrieved. A production RAG system might " +
+      "rewrite the query, broaden the search or " +
+      "ask the user to clarify."
+    );
+
+  }
+
+
+  /*
+   * =====================================================
+   * EXAMPLE QUESTIONS
+   * =====================================================
+   */
+
+  function useExample(number) {
+
+    const question =
+      document.getElementById("question");
+
+
+    if (number === 1) {
+
+      question.value =
+        "How can a customer reset their password?";
+
+    }
+
+
+    if (number === 2) {
+
+      question.value =
+        "What happens when a document is migrated?";
+
+    }
+
+
+    if (number === 3) {
+
+      question.value =
+        "How long are customer documents retained?";
+
+    }
+
+
+    runRAG();
+
+  }
+
+
+  /*
+   * =====================================================
+   * INITIAL DISPLAY
+   * =====================================================
+   */
+
+  displayChunks([]);
+
+</script>
+
+</body>
+</html>
 ```
